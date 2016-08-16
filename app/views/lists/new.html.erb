@@ -1,0 +1,12 @@
+<h1>FreshPerspective for Twitter</h1>
+<p class="lead">Type in the Twitter handle of the person whose feed you'd like to read.</p>
+  <%= form_tag('/lists', method: :post, class:"form-inline") do %>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">@</div>
+          <%= text_field_tag 'username', "", class: "form-control"%>
+        </div>
+      </div>
+      <%= submit_tag 'Create List', class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to 'Log Out', logout_path, method: :delete, class:"small" %>
