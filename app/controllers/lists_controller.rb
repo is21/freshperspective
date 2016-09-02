@@ -12,14 +12,14 @@ class ListsController < ApplicationController
       begin
         username = params[:username]
         list = @client.create_list(username, options = {mode: "private", description: "List created using FreshPerspective"})
-        friends = @client.friend_ids(username, options = {cursor:-1, count: 5000})
+        friends = @client.friend_ids(username, options = {cursor:-1, count: 1000})
         friends.each_slice(100) do |slice|
-          @client.add_list_members(list, slice)
+          @client.add_list_members(list.id, slice)
         end
-        redirect_to "https://twitter.com/#{@client.user.screen_name}/lists/#{username}"
-      rescue
-        flash[:warning] = "There was an error creating your list."
-        redirect_to lists_path
+        redirect_to list.uri.to_s
+      rescue Twitter::Error => e
+        flash[:danger] = "#{e.message}"
+        redirect_to new_list_path
       end
     end
 

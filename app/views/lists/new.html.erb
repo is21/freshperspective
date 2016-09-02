@@ -1,12 +1,18 @@
-<h1>FreshPerspective for Twitter</h1>
-<p class="lead">Type in the Twitter handle of the person whose feed you'd like to read.</p>
-  <%= form_tag('/lists', method: :post, class:"form-inline") do %>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon">@</div>
-          <%= text_field_tag 'username', "", class: "form-control"%>
-        </div>
-      </div>
-      <%= submit_tag 'Create List', class: "btn btn-primary" %>
-  <% end %>
-  <%= link_to 'Log Out', logout_path, method: :delete, class:"small" %>
+<row>
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <h1>FreshPerspective for Twitter</h1>
+    <p class="lead">See Twitter from someone else's perspective. FreshPerspective creates a Twitter list with the accounts someone else follows.</p>
+      <%= form_tag('/lists', method: :post, class:"form-inline") do %>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">@</div>
+              <%= text_field_tag 'username', "noahpinion", class: "form-control input-lg"%>
+            </div>
+          </div>
+          <%= submit_tag 'Create List', class: "btn btn-primary btn-lg" %>
+      <% end %>
+      <%= link_to 'Log Out', logout_path, method: :delete, class:"small" %>
+  </div>
+  <div class="col-md-2"></div>
+</row>
