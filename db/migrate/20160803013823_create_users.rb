@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider, null: false
       t.string :uid, null: false
       # add_index :users, :provider
-      add_index :users, :uid
-      add_index :users, [:provider, :uid], unique: true
+      # add_index :users, :uid
+      # add_index :users, [:provider, :uid], unique: true
       t.string :name
       t.string :location
       t.string :image_url
