@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-#Ignore dev config
-/config/environments/development.rb
+# Ignore application configuration
+/config/application.yml
