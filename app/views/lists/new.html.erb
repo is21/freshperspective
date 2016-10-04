@@ -1,18 +1,18 @@
 <row>
-  <div class="col-md-2"></div>
   <div class="col-md-8">
-    <h1>FreshPerspective for Twitter</h1>
-    <p class="lead">See Twitter from someone else's perspective. FreshPerspective creates a Twitter list with the accounts someone else follows.</p>
-      <%= form_tag('/lists', method: :post, class:"form-inline") do %>
+    <h1>FreshPerspective</h1>
+    <p class="lead">Type in the username of the person whose timeline you’d like to read.</p>
+    <%= form_tag('/lists', method: :post, class:"form") do %>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon">@</div>
-              <%= text_field_tag 'username', "noahpinion", class: "form-control input-lg"%>
+              <%= text_field_tag 'username', "", class: "form-control input-lg"%>
             </div>
           </div>
-          <%= submit_tag 'Create List', class: "btn btn-primary btn-lg" %>
+          <%= submit_tag 'Create List', class: "btn btn-default btn-mobile btn-outline" %>
       <% end %>
-      <%= link_to 'Log Out', logout_path, method: :delete, class:"small" %>
+      <br/>
+      <p class="small">Note: Twitter is strict about how many lists you can create and how many users you can follow. If you get an error, you’ll probably have to try again later.</p>
+      <%= link_to 'Sign in with another account', logout_path, method: :delete, class:"small" %>
   </div>
-  <div class="col-md-2"></div>
 </row>
