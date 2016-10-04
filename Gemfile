@@ -35,6 +35,7 @@ gem 'spring',        group: :development
 
 gem 'pg', group: :production
 
+# For static assets in production
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
