@@ -1,14 +1,10 @@
 <row>
   <div class="col-md-8">
-    <h1>FreshPerspective</h1>
     <p class="lead">Type in the username of the person whose timeline you’d like to read.</p>
     <%= form_tag('/lists', method: :post, class:"form") do %>
         <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-addon">@</div>
-              <%= text_field_tag 'username', "", class: "form-control input-lg"%>
-            </div>
-          </div>
+          <%= text_field_tag 'username', "", class: "form-control input-mobile"%>
+        </div>
           <%= submit_tag 'Create List', class: "btn btn-default btn-mobile btn-outline" %>
       <% end %>
       <br/>

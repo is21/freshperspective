@@ -36,8 +36,15 @@ body{
   width: 100%;
 }
 
+.input-mobile{
+  width: 100%;
+}
+
 @media (min-width: 768px){
   .btn-mobile{
+    width:auto;
+  }
+  .input-mobile{
     width:auto;
   }
 }
@@ -46,4 +53,20 @@ body{
   border: 2px solid #ffffff;
   color: #ffffff;
   background-color: transparent;
+}
+
+
+.navbar {
+    background:transparent;
+    border-width: 0 0 1px 0;
+    border-color: white;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-brand{
+  color:white;
+}
+
+.navbar-default .navbar-brand:hover{
+  color:white;
 }
