@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   def destroy
     if current_user
       session.delete(:user_id)
-      flash[:success] = "Thanks for stopping by!"
+      flash[:success] = "Thanks for trying out FreshPerspective!"
     end
     redirect_to root_path
   end
