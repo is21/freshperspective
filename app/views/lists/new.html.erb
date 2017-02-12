@@ -1,14 +1,19 @@
 <div class="row">
   <div class="col-md-8">
-    <p class="lead">Type in the username of the person whose timeline you’d like to read.</p>
-    <%= form_tag('/lists', method: :post, class:"form") do %>
-        <div class="form-group">
-          <%= text_field_tag 'username', "", class: "form-control input-mobile"%>
-        </div>
-          <%= submit_tag 'Create List', class: "btn btn-default btn-mobile btn-outline" %>
-      <% end %>
-      <br/>
-      <p class="small">Note: Twitter is strict about how many lists you can create and how many users you can follow. If you get an error, you’ll probably have to try again later.</p>
-      <%= link_to 'Sign in with another account', logout_path, method: :delete, class:"small" %>
+    <%= render 'shared/loading' %>
+    <div class="new-list">
+    <p class="lead">Choose the person whose timeline you’d like to read.</p>
+    <%= render 'recommendations' %>
+    <p class="lead">... or type in a username.</p>
+    <%= form_tag('/lists', method: :post, class:"form", id:'create-list') do %>
+    <div class="form-group">
+      <%= text_field_tag 'username', "", class: "form-control input-mobile", id: "username"%>
+    </div>
+    <%= submit_tag 'Create List', class: "btn btn-default btn-mobile btn-outline" %>
+    <% end %>
+    <br/>
+    <p class="small">Note: Twitter is strict about how many lists you can create and how many users you can follow. If you get an error, you might have to try again later.</p>
+    <%= link_to 'Sign in with another account', logout_path, method: :delete, class:"small" %>
+    </div>
   </div>
 </div>
